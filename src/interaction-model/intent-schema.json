@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "GetRandomCityIntent"
+    },
+    {
+     "intent": "GetCityByName",
+      "slots": [
+        {
+          "name": "CityName",
+          "type": "AMAZON.EUROPE_CITY"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

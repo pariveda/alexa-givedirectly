@@ -1,0 +1,7 @@
+GetRandomCityIntent where can I live
+GetRandomCityIntent where should I move to
+GetRandomCityIntent what is a cool place to vist
+GetRandomCityIntent give me a place to live
+GetRandomCityIntent tell me where to visit
+GetRandomCityIntent tell me a cool city
+GetRandomCityIntent tell me a random city
