@@ -3,19 +3,28 @@
   "version": "1.0.0",
   "description": "I18n version of fact skill.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interpfister/skill-sample-nodejs-fact.git"
+  },
   "scripts": {
-    "test": "lambda-local -l index.js -h handler -e event-samples/whereToLive.js"
+    "test": "lambda-local -l index.js -h handler -e event-samples/whereToLive.js",
+    "deploy": "set AWS_REGION=us-east-1&& set AWS_IAM_ROLE=arn:aws:iam::446645498137:role/lambda_basic_execution&& dpl"
   },
   "keywords": [
     "alexa",
     "skill",
     "fact"
   ],
-  "author": "Amazon.com",
+  "files_to_deploy": [ "package.json", "index.js"],
+  "author": "Ryan Pfister",
   "license": "Apache-2.0",
   "dependencies": {
     "alexa-sdk": "^1.0.6",
     "lambda-local": "^1.3.0",
     "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "dpl": "^3.7.0"
   }
 }
