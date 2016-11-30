@@ -5,3 +5,5 @@ GetRandomCityIntent give me a place to live
 GetRandomCityIntent tell me where to visit
 GetRandomCityIntent tell me a cool city
 GetRandomCityIntent tell me a random city
+GetCityByNameIntent how much does it cost to live in {CityName}
+GetCityByNameIntent how expensive is {CityName}

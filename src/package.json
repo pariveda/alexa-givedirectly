@@ -8,7 +8,7 @@
     "url": "git+https://github.com/interpfister/skill-sample-nodejs-fact.git"
   },
   "scripts": {
-    "test": "lambda-local -l index.js -h handler -e event-samples/whereToLive.js",
+    "test": "lambda-local -l index.js -h handler -e event-samples/cityByName.js",
     "deploy": "set AWS_REGION=us-east-1&& set AWS_IAM_ROLE=arn:aws:iam::446645498137:role/lambda_basic_execution&& dpl"
   },
   "keywords": [

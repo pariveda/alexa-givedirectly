@@ -30,18 +30,23 @@ var handlers = {
     'GetRandomCityIntent': function () {
         this.emit('RandomCity');
     },
+    'GetCityByNameIntent': function () {
+        this.emit('CityByName');
+    },    
     'RandomCity': function () {
-        var origThis = this;
-        request('https://nomadlist.com/api/v2/list/cities', function (error, response, body) {
-          if (!error && response.statusCode == 200) {
-            var json = JSON.parse(body);
-            var cityIndex = Math.floor(Math.random() * json.result.length);
-            var city = json.result[cityIndex];
-            var message = `You can live in ${city.info.city.name}, ${city.info.country.name}, and pay ${city.cost.nomad.USD} on dollars per month.`;
-            
-            origThis.emit(':tellWithCard', message, origThis.t("SKILL_NAME"), message);
-          }
-        });        
+        outputMatchingCity(this, function(results) {
+            console.log(results);
+            var cityIndex = Math.floor(Math.random() * results.length);
+            return results[cityIndex];
+        });
+    },
+    'CityByName': function () {
+        var cityName = this.event.request.intent.slots.CityName;
+        outputMatchingCity(this, function(results) {
+            return results.find(function(city) {
+                return (city.info.city.name === cityName);
+            });
+        });      
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = this.t("HELP_MESSAGE");
@@ -55,3 +60,18 @@ var handlers = {
         this.emit(':tell', this.t("STOP_MESSAGE"));
     }
 };
+
+function outputMatchingCity(obj, findFunction) {
+    request('https://nomadlist.com/api/v2/list/cities', function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        var json = JSON.parse(body);
+        var city = findFunction(json.result);
+        output(obj, city);
+      }
+    });
+}
+
+function output(obj, city) {
+    var message = `You can live in ${city.info.city.name}, ${city.info.country.name}, and pay ${city.cost.nomad.USD} on dollars per month.`;
+    obj.emit(':tellWithCard', message, obj.t("SKILL_NAME"), message);
+}

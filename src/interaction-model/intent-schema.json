@@ -4,7 +4,7 @@
       "intent": "GetRandomCityIntent"
     },
     {
-     "intent": "GetCityByName",
+     "intent": "GetCityByNameIntent",
       "slots": [
         {
           "name": "CityName",
