@@ -75,7 +75,7 @@ function outputMatchingCity(obj, findFunction) {
 function output(obj, city) {
     var message = "";
     if(city && city.info) {    
-        message = `You can live in ${city.info.city.name}, ${city.info.country.name}, and pay ${city.cost.nomad.USD} on dollars per month.`;        
+        message = `You can live in ${city.info.city.name}, ${city.info.country.name}, and pay ${city.cost.nomad.USD} dollars per month.`;        
     } else {
         message = "Sorry, I wasn't able to find that city. I can only find European cities by name.";
     }
