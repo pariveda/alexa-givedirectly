@@ -41,7 +41,8 @@ var handlers = {
         });
     },
     'CityByName': function () {
-        var cityName = this.event.request.intent.slots.CityName;
+        console.log("INTENT: " + JSON.stringify(this.event.request.intent));
+        var cityName = this.event.request.intent.slots.CityName.value;
         outputMatchingCity(this, function(results) {
             return results.find(function(city) {
                 return (city.info.city.name === cityName);
@@ -72,6 +73,12 @@ function outputMatchingCity(obj, findFunction) {
 }
 
 function output(obj, city) {
-    var message = `You can live in ${city.info.city.name}, ${city.info.country.name}, and pay ${city.cost.nomad.USD} on dollars per month.`;
+    var message = "";
+    if(city && city.info) {    
+        message = `You can live in ${city.info.city.name}, ${city.info.country.name}, and pay ${city.cost.nomad.USD} on dollars per month.`;        
+    } else {
+        message = "Sorry, I wasn't able to find that city. I can only find European cities by name.";
+    }
+    
     obj.emit(':tellWithCard', message, obj.t("SKILL_NAME"), message);
 }
