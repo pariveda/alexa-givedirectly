@@ -8,7 +8,7 @@
       "slots": [
         {
           "name": "CityName",
-          "type": "AMAZON.EUROPE_CITY"
+          "type": "LIST_OF_CITY_NAMES"
         }
       ]
     },
