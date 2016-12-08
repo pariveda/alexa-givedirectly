@@ -77,7 +77,7 @@ function output(obj, city) {
     if(city && city.info) {    
         message = `You can live in ${city.info.city.name}, ${city.info.country.name}, and pay ${city.cost.nomad.USD} dollars per month.`;        
     } else {
-        message = "Sorry, I wasn't able to find that city. I can only find European cities by name.";
+        message = "Sorry, I wasn't able to find that city.";
     }
     
     obj.emit(':tellWithCard', message, obj.t("SKILL_NAME"), message);
