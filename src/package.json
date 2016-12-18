@@ -1,11 +1,11 @@
 {
-  "name": "skill-sample-nodejs-fact-i18n",
+  "name": "alexa-givedirectly",
   "version": "1.0.0",
   "description": "I18n version of fact skill.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/interpfister/skill-sample-nodejs-fact.git"
+    "url": "git+https://github.com/interpfister/alexa-givedirectly.git"
   },
   "scripts": {
     "test": "lambda-local -l index.js -h handler -e event-samples/cityByName.js",
