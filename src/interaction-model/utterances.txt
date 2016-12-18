@@ -1,9 +1,3 @@
-GetRandomCityIntent where can I live
-GetRandomCityIntent where should I move to
-GetRandomCityIntent what is a cool place to vist
-GetRandomCityIntent give me a place to live
-GetRandomCityIntent tell me where to visit
-GetRandomCityIntent tell me a cool city
-GetRandomCityIntent tell me a random city
-GetCityByNameIntent how much does it cost to live in {CityName}
-GetCityByNameIntent how expensive is {CityName}
+GetPersonHelpedIntent how did GiveDirectly help today
+GetPersonHelpedIntent how did recipients use the transfer
+GetPersonHelpedIntent what did they do with the money

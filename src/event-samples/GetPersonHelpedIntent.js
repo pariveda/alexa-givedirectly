@@ -17,13 +17,8 @@ module.exports = {
     "type": "IntentRequest",
     "requestId": "amzn1.echo-api.request.[unique-value-here]",
     "intent": {
-      "slots": {
-        "CityName": {
-            "name": "CityName",
-            "value": "Berlin"
-        }
-      },
-      "name": "GetCityByNameIntent"
+      "slots": {},
+      "name": "GetPersonHelpedIntent"
     }
   },
   "context": {

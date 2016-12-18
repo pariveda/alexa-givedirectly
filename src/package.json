@@ -8,9 +8,8 @@
     "url": "git+https://github.com/interpfister/alexa-givedirectly.git"
   },
   "scripts": {
-    "test": "lambda-local -l index.js -h handler -e event-samples/cityByName.js",
-    "deploy": "set AWS_REGION=us-east-1&& set AWS_IAM_ROLE=arn:aws:iam::446645498137:role/lambda_basic_execution&& dpl",
-    "create-cities-file": "node createCitiesFile.js"
+    "test": "lambda-local -l index.js -h handler -e event-samples/GetPersonHelpedIntent.js",
+    "deploy": "set AWS_REGION=us-east-1&& set AWS_IAM_ROLE=arn:aws:iam::446645498137:role/lambda_basic_execution&& dpl"
   },
   "keywords": [
     "alexa",

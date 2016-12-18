@@ -1,17 +1,8 @@
 {
   "intents": [
     {
-      "intent": "GetRandomCityIntent"
-    },
-    {
-     "intent": "GetCityByNameIntent",
-      "slots": [
-        {
-          "name": "CityName",
-          "type": "LIST_OF_CITY_NAMES"
-        }
-      ]
-    },
+      "intent": "GetPersonHelpedIntent"
+    },    
     {
       "intent": "AMAZON.HelpIntent"
     },
