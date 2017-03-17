@@ -31,10 +31,10 @@ var handlers = {
         this.emit('GetPersonHelped');
     },      
     'GetPersonHelped': function () {
-        outputMatchingCity(this, function(results) {
+        outputResult(this, function(results) {
             console.log(results);
-            var cityIndex = Math.floor(Math.random() * results.length);
-            return results[cityIndex];
+            var index = Math.floor(Math.random() * results.length);
+            return results[index];
         });
     },    
     'AMAZON.HelpIntent': function () {
@@ -50,13 +50,11 @@ var handlers = {
     }
 };
 
-function outputMatchingCity(obj, findFunction) {
+function outputResult(obj, findFunction) {
     request('https://www.givedirectly.org/newsfeed.json', function (error, response, body) {
       if (!error && response.statusCode == 200) {
         var json = JSON.parse(body);
-        var elem = findFunction(json.filter((elem) => {
-			return elem.surveyPreview.prompt === "Describe the biggest difference in your daily life.";
-		}));
+        var elem = findFunction(json);
         output(obj, elem);
       }
     });
