@@ -47,6 +47,10 @@ var handlers = {
         var reprompt = this.t("HELP_MESSAGE");
         this.emit(':ask', speechOutput, reprompt);
     },
+    'AMAZON.FallbackIntent': function () {
+        var reprompt = this.t("HELP_REPROMPT");
+        this.emit(':ask', "Sorry, I didn't understand. " + this.t("HELP_REPROMPT"));
+    },
     'AMAZON.CancelIntent': function () {
         this.emit(':tell', this.t("STOP_MESSAGE"));
     },

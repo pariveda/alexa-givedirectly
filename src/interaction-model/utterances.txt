@@ -1,7 +1,0 @@
-WhatCitiesHaveOfficesIntent what cities have offices
-WhatCitiesHaveOfficesIntent where is Pariveda located
-WhatCitiesHaveOfficesIntent where does Pariveda Solutions have offices
-WhatIsAFinIntent what is a fin
-WhatDoesParivedaDoIntent what does Pariveda do
-WhatDoesParivedaDoIntent what does Pariveda sell
-WhyJoinIntent why should I join Pariveda

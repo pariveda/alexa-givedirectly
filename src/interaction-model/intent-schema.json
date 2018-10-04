@@ -1,25 +1,61 @@
 {
-  "intents": [
-    {
-      "intent": "WhatCitiesHaveOfficesIntent"
-    },
-    {
-      "intent": "WhatIsAFinIntent"
-    },
-    {
-      "intent": "WhatDoesParivedaDoIntent"
-    },
-    {
-      "intent": "WhyJoinIntent"
-    }, 
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "pariveda solutions",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WhatCitiesHaveOfficesIntent",
+                    "slots": [],
+                    "samples": [
+                        "what cities have offices",
+                        "where is Pariveda located",
+                        "where does Pariveda Solutions have offices"
+                    ]
+                },
+                {
+                    "name": "WhatIsAFinIntent",
+                    "slots": [],
+                    "samples": [
+                        "what is a fin"
+                    ]
+                },
+                {
+                    "name": "WhatDoesParivedaDoIntent",
+                    "slots": [],
+                    "samples": [
+                        "what does Pariveda do",
+                        "what does Pariveda sell"
+                    ]
+                },
+                {
+                    "name": "WhyJoinIntent",
+                    "slots": [],
+                    "samples": [
+                        "why should I join Pariveda"
+                    ]
+                }
+            ],
+            "types": []
+        }
     }
-  ]
 }
