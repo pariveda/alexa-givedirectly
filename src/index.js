@@ -38,8 +38,8 @@ var handlers = {
     },
     'WhyJoinIntent': function () {
         var reasons = ["It's an opportunity to work with other smart, friendly people.", "We have a proven employee development model where you can be promoted as soon as every year.", "We develop well-rounded consultants and don't pidgeon hole you into a specialization.", "We work in fun locations."];
-        var index = Math.floor(Math.random() * results.length);
-        var message = results[index] + " Ask again for another reason!";
+        var index = Math.floor(Math.random() * reasons.length);
+        var message = reasons[index] + " Ask again for another reason!";
         output(this, message);
     },
     'AMAZON.HelpIntent': function () {
