@@ -1,3 +1,3 @@
-Alexa Skill for Give Directly (https://www.givedirectly.org/)
+Alexa skill that answers common questions about Pariveda Solutions.
 
-It has one feature to ask how Give Directly helped that day. Data is pulled from the GDLive API.
+Feel free to submit PRs with additional question answers!

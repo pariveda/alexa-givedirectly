@@ -1,8 +1,17 @@
 {
   "intents": [
     {
-      "intent": "GetPersonHelpedIntent"
-    },    
+      "intent": "WhatCitiesHaveOfficesIntent"
+    },
+    {
+      "intent": "WhatIsAFinIntent"
+    },
+    {
+      "intent": "WhatDoesParivedaDoIntent"
+    },
+    {
+      "intent": "WhyJoinIntent"
+    }, 
     {
       "intent": "AMAZON.HelpIntent"
     },

@@ -6,9 +6,9 @@ var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
 var languageStrings = {    
     "en-US": {
         "translation": {            
-            "SKILL_NAME" : "GiveDirectly (unofficial)",
-            "HELP_MESSAGE" : "Ask me how GiveDirectly helped today!",
-            "HELP_REPROMPT" : "Ask how recipients used their transfers.",
+            "SKILL_NAME" : "Pariveda Solutions",
+            "HELP_MESSAGE" : "Ask me questions about Pariveda Solutions!",
+            "HELP_REPROMPT" : "You can ask: 'what does Pariveda Solutions do', 'where does Pariveda Solutions have offices', 'what is a fin', and 'why should I join Pariveda?'",
             "STOP_MESSAGE" : "Goodbye!"
         }
     }    
@@ -25,18 +25,23 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit('GetPersonHelped');
+        this.emit('AMAZON.HelpIntent');
+    },     
+    'WhatDoesParivedaDoIntent': function () {
+        output(this, "Pariveda Solutions, Inc. is a leading management consulting firm specializing in improving our clients' performance with strategic services and information technology solutions. We creatively solve complex, ambiguous business problems with our clients, mostly using technology.");
     },
-    'GetPersonHelpedIntent': function () {
-        this.emit('GetPersonHelped');
-    },      
-    'GetPersonHelped': function () {
-        outputResult(this, function(results) {
-            console.log(results);
-            var index = Math.floor(Math.random() * results.length);
-            return results[index];
-        });
-    },    
+    'WhatCitiesHaveOfficesIntent': function () {
+        output(this, "Pariveda Solutions has offices in Atlanta, Chicago, Dallas, Houston, Los Angeles, New York, Philadelphia, San Francisco, Seattle, and Washington D.C.");
+    },     
+    'WhatIsAFinIntent': function () {
+        output(this, "A fin is a Pariveda Solutions employee. We call our employees fins because our mascot is a dolphin.");
+    },
+    'WhyJoinIntent': function () {
+        var reasons = ["It's an opportunity to work with other smart, friendly people.", "We have a proven employee development model where you can be promoted as soon as every year.", "We develop well-rounded consultants and don't pidgeon hole you into a specialization.", "We work in fun locations."];
+        var index = Math.floor(Math.random() * results.length);
+        var message = results[index] + " Ask again for another reason!";
+        output(this, message);
+    },
     'AMAZON.HelpIntent': function () {
         var speechOutput = this.t("HELP_MESSAGE");
         var reprompt = this.t("HELP_MESSAGE");
@@ -50,18 +55,6 @@ var handlers = {
     }
 };
 
-function outputResult(obj, findFunction) {
-    request('https://www.givedirectly.org/newsfeed.json', function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        var json = JSON.parse(body);
-        var elem = findFunction(json);
-        output(obj, elem);
-      }
-    });
-}
-
-function output(obj, elem) {
-    var message = elem.surveyPreview.response;
-    
+function output(obj, message) {    
     obj.emit(':tellWithCard', message, obj.t("SKILL_NAME"), message);
 }
