@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback) {
 var handlers = {
     'LaunchRequest': function () {
         this.emit('AMAZON.HelpIntent');
-    },     
+    },   
     'WhatDoesParivedaDoIntent': function () {
         output(this, "Pariveda Solutions, Inc. is a leading management consulting firm specializing in improving our clients' performance with strategic services and information technology solutions. We creatively solve complex, ambiguous business problems with our clients, mostly using technology.");
     },
@@ -55,6 +55,9 @@ var handlers = {
         this.emit(':tell', this.t("STOP_MESSAGE"));
     },
     'AMAZON.StopIntent': function () {
+        this.emit(':tell', this.t("STOP_MESSAGE"));
+    },
+    'SessionEndedRequest': function () {
         this.emit(':tell', this.t("STOP_MESSAGE"));
     }
 };
