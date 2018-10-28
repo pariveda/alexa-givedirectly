@@ -7,8 +7,7 @@ var languageStrings = {
     "en-US": {
         "translation": {            
             "SKILL_NAME" : "Pariveda Solutions",
-            "HELP_MESSAGE" : "Ask me questions about Pariveda Solutions!",
-            "HELP_REPROMPT" : "You can ask: 'what does Pariveda Solutions do', 'where does Pariveda Solutions have offices', 'what is a fin', and 'why should I join Pariveda?'",
+            "HELP_MESSAGE" : "Ask me questions about Pariveda Solutions! You can ask: 'what does Pariveda Solutions do', 'where does Pariveda Solutions have offices', 'what is a fin', and 'why should I join Pariveda?",
             "STOP_MESSAGE" : "Goodbye!"
         }
     }    
@@ -34,10 +33,10 @@ var handlers = {
         output(this, "Pariveda Solutions has offices in Atlanta, Chicago, Dallas, Houston, Los Angeles, New York, Philadelphia, San Francisco, Seattle, and Washington D.C.");
     },     
     'WhatIsAFinIntent': function () {
-        output(this, "A fin is a Pariveda Solutions employee. We call our employees fins because our mascot is a dolphin.");
+        output(this, "A fin is a Pariveda Solutions employee. We call our employees fins because our mascot is a dolphin and it symbolizes our people. Dolphins work in teams or pods and work well together. Dolphins also desire to help others as they have been known to rescue humans in open water. We embody these same traits at Pariveda.");
     },
     'WhyJoinIntent': function () {
-        var reasons = ["It's an opportunity to work with other smart, friendly people.", "We have a proven employee development model where you can be promoted as soon as every year.", "We develop well-rounded consultants and don't pidgeon hole you into a specialization.", "We work in fun locations."];
+        var reasons = ["It's an opportunity to work on cool technologies with other smart, friendly people in a small team environment", "Pariveda hires like-minded people who are interested in growing themselves and others along our proven employee development model.", "We develop well-rounded consultants and don't pidgeon hole you into a technology or industry specialization.", "We work in fun locations."];
         var index = Math.floor(Math.random() * reasons.length);
         var message = reasons[index] + " Ask again for another reason!";
         output(this, message);
